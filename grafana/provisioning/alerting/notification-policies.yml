@@ -1,13 +1,3 @@
-# Política de notificación aprovisionada como código.
-# Enruta todas las alertas al contact point "backend-webhook" con tiempos
-# cortos para que el log de la alerta aparezca rápido durante la práctica.
 apiVersion: 1
 
-policies:
-  - orgId: 1
-    receiver: backend-webhook
-    group_by:
-      - alertname
-    group_wait: 10s
-    group_interval: 30s
-    repeat_interval: 1h
+policies: []

@@ -1,15 +1,3 @@
-# Contact point aprovisionado como código: webhook hacia el backend.
-# Cuando una alarma pasa a Firing/Resolved, Grafana hace POST a
-# http://backend:3001/alerts y el backend lo registra como log (-> Loki).
 apiVersion: 1
 
-contactPoints:
-  - orgId: 1
-    name: backend-webhook
-    receivers:
-      - uid: backend-webhook
-        type: webhook
-        settings:
-          url: http://backend:3001/alerts
-          httpMethod: POST
-        disableResolveMessage: false
+contactPoints: []
