@@ -1,0 +1,16 @@
+# Provisioning de dashboards como código.
+# Grafana lee este archivo al arrancar y carga todos los JSON que encuentre
+# en /var/lib/grafana/dashboards (montado desde ./grafana/dashboards).
+apiVersion: 1
+
+providers:
+  - name: 'laboratorio-observabilidad'
+    orgId: 1
+    folder: 'Observabilidad'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards
+      foldersFromFilesStructure: false
